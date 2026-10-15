@@ -13,4 +13,6 @@ Voorbereiding: `scripts/x2/fetch_x2_assets.sh && pip install yourdfpy trimesh py
 | 6 | cuRobo-planning | Plan van home naar een pose voor de tafel, zonder zelfbotsing | cuRobo `MotionGen` laden met `X2_omnipicker_fixed_dual.yml` en `plan_single` | Plan gevonden < 1 s, geen zelfbotsing in de home-pose | **Ja (CUDA)** | ⏳ niet gedraaid |
 | 7 | Grijp-taak | De G2-pick-taak met de X2 | Genie Sim data collection met `tasks/geniesim_2025/pick_specific_object/x2/pick_specific_object_x2.json` | Object wordt opgetild; mogelijk moeten robothoogte/-positie worden bijgesteld | **Ja** | ⏳ niet gedraaid |
 
-Offline-resultaat (box, geen GPU): `pytest tests/x2` → **9 passed**.
+| 8 | Boter platdrukken (MuJoCo flexcomp) | De X2 drukt 9× op een zacht boterblok: dikte −36 %, footprint +78 %, geen NaN, joints stil | `pytest tests/x2/test_x2_butter.py` (~1 min) | geslaagd | Nee (MuJoCo, CPU) | ✅ geslaagd |
+
+Offline-resultaat (box, geen GPU): `pytest tests/x2` → **14 passed** (58 s).
